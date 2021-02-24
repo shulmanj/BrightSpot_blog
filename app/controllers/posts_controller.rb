@@ -1,17 +1,21 @@
 class PostsController < ApplicationController
 
+    # List of all posts
     def index
         @posts = Post.all
     end
 
+    # Calls show.html.erb file
     def show
         @post = Post.find(params[:id])
     end
 
+    # New post
     def new
         @post = Post.new
     end
 
+    # Create new post
     def create
         @post = Post.new(post_params)
 
@@ -21,23 +25,9 @@ class PostsController < ApplicationController
             render :new
         end
     end
-
-    ##
-    #def edit
-    #    @post = Post.find(params[:id])
-    #end
-
-    #def update
-        #@post = Post.find(params[:id])
-
-        #if @post.update(post_params)
-        #    redirect_to @post
-        #else
-        #    render :edit
-        #end
-    #end 
     
     private
+        # Attributes of post
         def post_params
             params.require(:post).permit(:title, :body)
         end
