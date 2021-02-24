@@ -107,6 +107,7 @@ textarea {
     font-size: large;
     width: 80%;
     resize: vertical;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 input {
